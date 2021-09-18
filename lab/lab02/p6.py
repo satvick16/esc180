@@ -20,20 +20,21 @@ def divide(to_divide):
 
 def memory():
     global current_value
+    global saved
 
-    with open("test.txt", "w") as f:
-        f.write(str(current_value))
+    save = current_value
 
 
 def recall():
     global current_value
+    global saved
 
-    with open("test.txt", "r") as f:
-        current_value = int(f.read())
+    current_value = saved
 
 
 if __name__ == "__main__":
     current_value = 0
+    saved = 0
     display_current_value()  # 0
     memory()  # save 0
     add(3)  # add 3 to current_value

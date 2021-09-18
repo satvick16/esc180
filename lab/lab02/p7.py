@@ -4,16 +4,16 @@ def display_current_value():
 
 def add(to_add):
     global current_value
+    global prev_value
+    prev_value = current_value
     current_value += to_add
-    global past_values
-    past_values.append(current_value)
 
 
 def multiply(to_multiply):
     global current_value
+    global prev_value
+    prev_value = current_value
     current_value *= to_multiply
-    global past_values
-    past_values.append(current_value)
 
 
 def subtract(to_subtract):
@@ -41,14 +41,13 @@ def recall():
 
 def undo():
     global current_value
-    global past_values
-    current_value = past_values[-2]
-    past_values.append(current_value)
+    global prev_value
+    current_value, prev_value = prev_value, current_value
 
 
 if __name__ == "__main__":
     current_value = 0
-    past_values = [0]
+    prev_value = 0
     display_current_value()  # 0
     add(5)  # 5
     subtract(2)
