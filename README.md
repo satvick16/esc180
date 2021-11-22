@@ -1,1 +1,1 @@
-Course notes and labs for ESC180: Intro to Programming
+Course notes, labs and projects for ESC180: Intro to Programming
