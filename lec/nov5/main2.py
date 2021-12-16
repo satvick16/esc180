@@ -2,6 +2,8 @@ import random
 
 # Bogosort
 
+# O(n)
+
 
 def is_sorted_nondecreasing(L):
     # return L == sorted(L)

@@ -38,3 +38,29 @@ def is_winning_sum(s):
             return False
 
     return True
+
+
+def p2(n):
+    if n == 21:
+        return True
+
+    for move in [1, 2]:
+        if p1(n + move):
+            return False
+
+    return True
+
+
+def p1(n):
+    if n == 21:
+        return True
+
+    for move in [1, 2]:
+        if p2(n + move):
+            return False
+
+    return True
+
+
+for i in range(1, 21):
+    print(p1(i), is_winning_sum(i))
